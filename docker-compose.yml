@@ -1,0 +1,10 @@
+version: '3.8'
+
+# Services
+services:
+
+  # Nginx Service
+  nginx:
+    image: nginx:1.21
+    ports:
+      - 80:80
