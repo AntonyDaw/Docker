@@ -30,7 +30,8 @@ services:
     environment:
       MYSQL_ROOT_PASSWORD: root
       MYSQL_ROOT_HOST: "%"
-      MYSQL_DATABASE: demo
+      MYSQL_DATABASE: agenda
+      MYSQL_USER: root
     volumes:
       - ./.docker/mysql/my.cnf:/etc/mysql/conf.d/my.cnf
       - mysqldata:/var/lib/mysql
