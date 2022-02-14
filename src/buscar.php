@@ -1,6 +1,6 @@
 <?php
-
-    $mysqli=new mysqli("127.0.0.1","root","root","agenda");
+    // instead localhost and 127.0.0.1 will be mysql
+    $mysqli=new mysqli("mysql","root","root","agenda");
 
     if ($mysqli->connect_error){
         echo "error al realizar la conexión";

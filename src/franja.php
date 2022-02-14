@@ -1,6 +1,6 @@
 <?php
 
-    $mysqli=new mysqli("127.0.0.1","root","","agenda");
+    $mysqli=new mysqli("mysql","root","root","agenda");
 
     if ($mysqli->connect_error){
         echo "error al realizar la conexión";
@@ -17,7 +17,7 @@
                 $mayor = $_POST['edad1'];
             }
 
-            $sql= "SELECT * FROM datos WHERE nombre BETWEEN $menor AND $mayor";
+            $sql= "SELECT * FROM datos WHERE edad BETWEEN $menor AND $mayor";
             $result = $mysqli -> query($sql);
         }
 
@@ -53,19 +53,21 @@
                                 
                                 if ($result){
                                     echo "<table id='tabla'><tr><th>Nombre</th><th>Apellido</th><th>Direccion</th><th>Telefono</th><th>Edad</th><th>Altura</th></tr>";
-                                    echo "<tr>";
+                                    
                                     $fila=$result->fetch_assoc();
                                  
                                     while ($fila){
+                                        echo "<tr>";
                                         echo "<td>{$fila["nombre"]}</td>";
                                         echo "<td>{$fila["apellido"]}</td>";
                                         echo "<td>{$fila["direccion"]}</td>";
                                         echo "<td>{$fila["telefono"]}</td>";
                                         echo "<td>{$fila["edad"]}</td>";
                                         echo "<td>{$fila["altura"]}</td>";
+                                        echo "</tr>";
                                         $fila=$result->fetch_assoc();
                                     }
-                                    echo "</tr></table><br>";
+                                    echo "</table><br>";
                                     $result->close();
                                 }
                             }  

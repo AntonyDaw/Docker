@@ -1,6 +1,6 @@
 <?php
 
-    $mysqli=new mysqli("127.0.0.1","root","","agenda");
+    $mysqli=new mysqli("mysql","root","root","agenda");
 
     
 
